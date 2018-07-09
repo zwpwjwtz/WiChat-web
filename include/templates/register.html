@@ -1,0 +1,27 @@
+    <div class="register-area">
+        <div class="register-title"><b>Register a WiChat account</b></div>
+        <form method="POST">
+            <input name="action" type="hidden" value="register_normal" />
+            <div>
+                <span class="register-input-name">Account ID:</span>
+                <input name="id" type="text" value="" />
+                <span>(5 ~ 7 digits)</span>
+            </div>
+            <div>
+                <span class="register-input-name">Account Password:</span>
+                <input name="password" type="password" value="" />
+                <span class="register-input-prompt">(6 ~ 16 characters)</span>
+            </div>
+            <div>
+                <span class="register-input-name">Repeat account Password:</span>
+                <input name="repassword" type="password" value="" />
+                <span class="register-input-prompt">(6 ~ 16 characters)</span>
+            </div>
+            <input type="submit" value="Register" />
+            <input type="reset" value="Reset" />
+        </form>
+        <div id="info-sysMsg">
+            <?php if (array_key_exists('result',$sysMsg)) echo $sysMsg['result'];?>
+            <?php if (array_key_exists('help',$sysMsg)) echo $sysMsg['help'];?>
+        </div>
+    </div>
