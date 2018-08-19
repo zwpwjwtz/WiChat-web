@@ -1,4 +1,6 @@
 <?php
+define('REGEX_ACCOUNT_PHONE','/^(?:(?:\+?(\d+)-?)|(?:\(\d+\)))(\d+)$/');
+
 function checkID($str)
 {
     if (!$str) return false;
@@ -21,6 +23,17 @@ function checkPassword($str)
     if ($l<6 || $l>16) return false;
     return true;
 }
+
+function checkEmail($str)
+{
+    return filter_var($str, FILTER_VALIDATE_EMAIL);
+}
+
+function checkPhone($str)
+{
+    return preg_match(REGEX_ACCOUNT_PHONE,preg_replace('/\s+/', '', $str));
+}
+
 function formatID($str,$len)
 {
     return $str.str_repeat("\0", $len - strlen($str));

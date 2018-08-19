@@ -91,5 +91,51 @@ function strip_tag_array($str,$tagsArr) {
     return preg_replace($reg,'',$str);
 }
 
+/**
+ * Various library functions
+ * From Wichat-server project, by zwpwjwtz
+ */
+function intToBytes($value,$length)
+{
+	$temp='';
+	for ($i=0;$i<$length;$i++)
+	{
+		$temp.=chr($value & 0xFF);
+		$value>>=8;
+	}
+	return $temp;
+}
+function bytesToInt($value,$length)
+{
+	$temp=0;
+	if (strlen($value)<$length) $length=strlen($value);
+	for ($i=0;$i<$length;$i++)
+		$temp+=ord($value[$i])<<($i*8);
+	return $temp;
+}
+
+/**
+ * Fix the length of a string, padding it when necessary
+ * @param string $string
+ * @param int $length
+ */
+function str_fix(&$string,$length)
+{
+	if (strlen($string) > $length)
+		$string=substr($string,0,$length);
+	else
+		$string=str_pad($string,$length,"\0");
+}
+
+function getClientIP()
+{
+	$addr='';
+	if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+		$addr = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	if (empty($addr))
+		$addr = $_SERVER['REMOTE_ADDR'];
+	return $addr;
+}
+
 require_once(WICHAT_WEB_ROOT.'/include/lib/function_UI.php');
 ?>

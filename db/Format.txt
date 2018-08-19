@@ -1,0 +1,20 @@
+Register.dat:
+====Header====			32bytes Fixed
+WiChatID			8bytes DB Type
+YYYY-MM-DD,HH:MM:SS[ID]		20bytes Last Update Time
+X				1byte Server ID
+X				1byte DB Version
+XX				2bytes Record Number
+
+====Record Area====		256bytes Per Record
+XXXXXXX\0			Max 8bytes ID
+X(x8)				8bytes Reserved 
+YYYY-MM-DD,HH:MM:SS[ID]		20bytes Registration Time & updater ID
+X(x32)				Max 32bytes Registration IP
+X				1byte Registration Method
+X				1byte Account State
+X(x48)				Max 48bytes Email Address
+X(x32)				Max 32bytes Phone Number
+X(x32)				Max 32bytes Authentication Question
+X(x32)				Max 32bytes Authentication Response
+X(x44)				42bytes Reserved
