@@ -52,6 +52,7 @@ switch ($action)
         {
             require_once('auth_code.php');
             auth_destroy($params);
+            $view='register_ok';
         }
         break;
     case 'show_auth':
@@ -73,6 +74,9 @@ switch($view)
 {
     case 'register_normal':
         require_once(WICHAT_WEB_ROOT.'/include/templates/register.html');
+        break;
+    case 'register_ok':
+        require_once(WICHAT_WEB_ROOT.'/include/templates/register_ok.html');
         break;
     case 'show_auth':
         require_once(WICHAT_WEB_ROOT.'/include/templates/auth_code.html');

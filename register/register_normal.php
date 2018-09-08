@@ -68,7 +68,7 @@ function register($params)
     {
         case RESPONSE_SUCCESS:
             require_once(WICHAT_WEB_ROOT.'/include/lib/db.php');
-            $record=new regRecord();
+            $account=new regRecord();
             $account->ID=$ID;
             $account->regIP=getClientIP();
             $account->regMethod=WEB_REGISTER_METHOD_NORMAL;
@@ -79,9 +79,7 @@ function register($params)
             $account->authAnswer=$authAnswer;
             $db=new regDB(REGISTER_LIST);
             $db->setRecord($account);
-            setSysMsg('result','User Registered.');
-            setSysMsg('help','Please log in with your account ID <b>'.$ID.'</b> and password.');
-            break;
+            return true;
         case RESPONSE_FAILED:
             if (ord($content[1]) == RESPONSE_ACCOUNT_ID_EXISTS)
                 setSysMsg('result','This ID already exists. Please choose another one.');
@@ -94,6 +92,6 @@ function register($params)
         default:
             setSysMsg('result','Server error. Please try again later.');
     }
-    return true;
+    return false;
 }
 ?>
