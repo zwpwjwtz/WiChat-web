@@ -16,10 +16,14 @@ define('SERVER_ADMIN_EMAIL','');
 define('SERVER_OPERATOR_NAME','');
 define('SERVER_OPERATOR_URL','');
 
+define('REGISTRATION_NEED_INVITATION',true);
+define('REGISTRATION_NEED_VERIFICATION',false);
+
 define('WICHAT_WEB_ROOT',dirname(__FILE__));
 define('WICHAT_WEB_WEB_ROOT','127.0.0.1/web');
 define('WICHAT_WEB_WEB_TEMPLATE',WICHAT_WEB_WEB_ROOT.'/include/templates');
 
 define('WICHAT_WEB_DB_DIR',WICHAT_WEB_ROOT.'/db');
 define('REGISTER_LIST',WICHAT_WEB_DB_DIR.'/reg.dat');
+define('INVITATION_LIST',WICHAT_WEB_DB_DIR.'/invitation.dat');
 ?>

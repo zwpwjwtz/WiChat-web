@@ -17,4 +17,24 @@ X(x48)				Max 48bytes Email Address
 X(x32)				Max 32bytes Phone Number
 X(x32)				Max 32bytes Authentication Question
 X(x32)				Max 32bytes Authentication Response
-X(x44)				42bytes Reserved
+X(x42)				42bytes Reserved
+
+
+
+Invitation.dat:
+====Header====			32bytes Fixed
+WiChatVD			8bytes DB Type
+YYYY-MM-DD,HH:MM:SS[ID]		20bytes Last Update Time
+X				1byte Server ID
+X				1byte DB Version
+XX				2bytes Record Number
+
+====Record Area====		64bytes Per Record
+XXXXXXX\0			Max 8bytes Invitation Code
+XXXXXXX\0			Max 8bytes Registration ID
+X				1byte Invitation state
+X				1byte Invitation type
+X				2bytes Validity (days)
+X				20bytes Creation Time & updater ID
+YYYY-MM-DD,HH:MM:SS[ID]		20bytes Registration Time & updater ID
+X(x4)				4bytes Reserved

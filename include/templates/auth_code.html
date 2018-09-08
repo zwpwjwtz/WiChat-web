@@ -1,0 +1,17 @@
+    <div class="auth-area">
+        <div class="auth-title"><b>Invitation code is needed for registration</b></div>
+        <form method="POST">
+            <input name="action" type="hidden" value="auth_code" />
+            <div>
+                <span class="auth-input-code">Invitation code:</span>
+                <input name="code" type="text" value="" />
+                <span>(8 digits)</span>
+            </div>
+            <input type="submit" value="Register" />
+            <input type="reset" value="Reset" />
+        </form>
+        <div id="info-sysMsg">
+            <?php if (array_key_exists('result',$sysMsg)) echo $sysMsg['result'];?>
+            <?php if (array_key_exists('help',$sysMsg)) echo $sysMsg['help'];?>
+        </div>
+    </div>

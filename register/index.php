@@ -32,14 +32,34 @@ else
     $action = 'invalid';
 }
 
+// Check if authentication is required
+if (REGISTRATION_NEED_INVITATION)
+{
+    session_start();
+    if(isset($_SESSION['authorized']) && $_SESSION['authorized']==true)
+        $action='register_normal';
+    else
+        $action='show_auth';
+}
+
 // Dispatch request according to $action
 $view='';
 switch ($action)
 {
     case 'register_normal':
-        require_once('./register_normal.php');
-        register($params);
-        require_once('./index.php');
+        require_once('register_normal.php');
+        if (register($params))
+        {
+            require_once('auth_code.php');
+            auth_destroy($params);
+        }
+        break;
+    case 'show_auth':
+        require_once('auth_code.php');
+        if (!authentication($params))
+            $view='show_auth';
+        else
+            $view='register_normal';
         break;
     default:;
 }
@@ -52,8 +72,12 @@ if ($view=='') $view=$action;
 switch($view)
 {
     case 'register_normal':
-    default:
         require_once(WICHAT_WEB_ROOT.'/include/templates/register.html');
+        break;
+    case 'show_auth':
+        require_once(WICHAT_WEB_ROOT.'/include/templates/auth_code.html');
+        break;
+    default:;
 }
 require_once(WICHAT_WEB_ROOT.'/include/templates/footer.html');
 

@@ -1,4 +1,7 @@
 <?php
+if (!defined('WICHAT_WEB_ROOT')) exit(0);
+define('TIME_REG','/^([0-9]{4})\/([0-1][0-9])\/([0-3][0-9]),([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/');
+
 /**
  * Project: NJUOPEN/Portal-BBS
  * Contributor:WTZ
@@ -112,6 +115,35 @@ function bytesToInt($value,$length)
 	for ($i=0;$i<$length;$i++)
 		$temp+=ord($value[$i])<<($i*8);
 	return $temp;
+}
+function stringsToInts($value)  // Return: Array of Integers
+{
+	if ($value==NULL) return NULL;
+	else if (count($value)==1) return (int)$value;
+	else
+	{
+		$temp=array();
+		foreach ($value as $item) array_push($temp,(int)$item);
+		return $temp;
+	}
+}
+/**
+ * Return the difference (in second) between two time string
+ * The time string is parsed according to the format string
+ * @param string $format
+ * @param string $time1
+ * @param string $time2
+ */
+function timeDiff($format,$time1,$time2='') // Return: Long
+{
+	date_default_timezone_set('UTC');
+	if (!(preg_match($format,$time1,$timeArray1)==1 && ($timeArray1=stringsToInts($timeArray1))!=NULL && checkdate($timeArray1[2],$timeArray1[3],$timeArray1[1]))) return 0;
+	if ($time2=='')	return time()-mktime($timeArray1[4],$timeArray1[5],$timeArray1[6],$timeArray1[2],$timeArray1[3],$timeArray1[1]);
+	else
+	{
+		if (!(preg_match($format,$time2,$timeArray2)==1 && ($timeArray2=stringsToInts($timeArray2))!=NULL && checkdate($timeArray2[2],$timeArray2[3],$timeArray2[1]))) return 0;
+		else return mktime($timeArray1[4],$timeArray1[5],$timeArray1[6],$timeArray1[2],$timeArray1[3],$timeArray1[1])-mktime($timeArray2[4],$timeArray2[5],$timeArray2[6],$timeArray2[2],$timeArray2[3],$timeArray2[1]);
+	}
 }
 
 /**
