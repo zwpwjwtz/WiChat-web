@@ -1,0 +1,93 @@
+form
+{
+    margin:0px auto;
+}
+
+input[type=checkbox]
+{
+  transform: scale(2);
+}
+
+.register-area
+{
+    margin:30px auto;
+    width:80%;
+}
+
+.register-title
+{
+    text-align:center;
+    font-size:1.5em;
+    margin-bottom:50px;
+} 
+
+.auth-input-submit
+{
+    display:block;
+    margin:30px auto;
+    height:2em;
+    width:40%;
+}
+
+.register-field-asterisk
+{
+    color:#cc0000;
+    font-style:bold;
+}
+
+.register-input
+{
+    margin:10px auto;
+}
+
+.register-input-text
+{
+    background:transparent;
+    border-style:solid;
+    border-width:0px 0px 1px 0px;
+    border-color:#666666;
+    text-align:center;
+}
+
+.register-input-prompt
+{
+    color:#666666;
+    font-style:italic;
+}
+
+.register-submit-area
+{
+    margin:0px auto;
+    width:60%;
+}
+
+.register-input-button
+{
+    font-size:1.2em;
+    margin:0px 20px;
+    height:2em;
+    width:200px;
+}
+
+.register-result-id
+{
+    color:#cc0000;
+    font-size:2em;
+}
+
+#register-prompt-mandatory
+{
+    margin:10px auto;
+    color:#666666;
+    font-style:italic;
+}
+
+#register-prompt-agreement
+{
+    margin:10px auto;
+}
+
+#register-prompt-agreement a
+{
+    color:#3300ff;
+}

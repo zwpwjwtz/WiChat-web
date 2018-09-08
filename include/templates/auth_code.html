@@ -3,12 +3,11 @@
         <form method="POST">
             <input name="action" type="hidden" value="auth_code" />
             <div>
-                <span class="auth-input-code">Invitation code:</span>
-                <input name="code" type="text" value="" />
+                <span>Invitation code:</span>
+                <input class="auth-input-code" name="code" type="text" value="" />
                 <span>(8 digits)</span>
             </div>
-            <input type="submit" value="Register" />
-            <input type="reset" value="Reset" />
+            <input class="auth-input-submit" type="submit" value="Verify" />
         </form>
         <div id="info-sysMsg">
             <?php if (array_key_exists('result',$sysMsg)) echo $sysMsg['result'];?>

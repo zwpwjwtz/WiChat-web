@@ -2,48 +2,50 @@
         <div class="register-title"><b>Register a WiChat account</b></div>
         <form method="POST">
             <input name="action" type="hidden" value="register_normal" />
-            <div>
+            <div class="register-input">
                 <span class="register-input-name"><span class="register-field-asterisk">*</span>Account ID:</span>
-                <input name="id" type="text" value="<?php echo $params['id'];?>" />
-                <span>(5 ~ 7 digits)</span>
+                <input class="register-input-text" name="id" type="text" value="<?php echo $params['id'];?>" />
+                <span class="register-input-prompt">(5 ~ 7 digits)</span>
             </div>
-            <div>
+            <div class="register-input">
                 <span class="register-input-name"><span class="register-field-asterisk">*</span>Account Password:</span>
-                <input name="password" type="password" value="" />
+                <input class="register-input-text" name="password" type="password" value="" />
                 <span class="register-input-prompt">(6 ~ 16 characters)</span>
             </div>
-            <div>
-                <span class="register-input-name"><span class="register-field-asterisk">*</span>Repeat account Password:</span>
-                <input name="repassword" type="password" value="" />
+            <div class="register-input">
+                <span class="register-input-name"><span class="register-field-asterisk">*</span>Repeat account password:</span>
+                <input class="register-input-text" name="repassword" type="password" value="" />
                 <span class="register-input-prompt">(6 ~ 16 characters)</span>
             </div>
-            <div>
+            <div class="register-input">
                 <span class="register-input-name"><span class="register-field-asterisk">*</span>Email address:</span>
-                <input name="email" type="text" value="<?php echo $params['email'];?>" />
-                <span>(less than 48 characters)</span>
+                <input class="register-input-text" name="email" type="text" value="<?php echo $params['email'];?>" />
+                <span class="register-input-prompt">(less than 48 characters)</span>
             </div>
-            <div>
+            <div class="register-input">
                 <span class="register-input-name"><span class="register-field-asterisk">*</span>Phone number:</span>
-                <input name="phone" type="text" value="<?php echo $params['phone'];?>" />
-                <span>(Country calling codes is require)</span>
+                <input class="register-input-text" name="phone" type="text" value="<?php echo $params['phone'];?>" />
+                <span class="register-input-prompt">(Country calling codes is require)</span>
             </div>
-            <div>
+            <div class="register-input">
                 <span class="register-input-name">Please set a question for authentication:</span>
-                <input name="authQuestion" type="text" value="<?php echo $params['authQuestion'];?>" />
-                <span>(1 ~ 32 characters)</span>
+                <input class="register-input-text" name="authQuestion" type="text" value="<?php echo $params['authQuestion'];?>" />
+                <span class="register-input-prompt">(1 ~ 32 characters)</span>
             </div>
-            <div>
+            <div class="register-input">
                 <span class="register-input-name">Please set an answer to the above question:</span>
-                <input name="authAnswer" type="text" value="<?php echo $params['authAnswer'];?>" />
-                <span>(1 ~ 32 characters)</span>
+                <input class="register-input-text" name="authAnswer" type="text" value="<?php echo $params['authAnswer'];?>" />
+                <span class="register-input-prompt">(1 ~ 32 characters)</span>
             </div>
             <div id="register-prompt-mandatory"><span class="register-field-asterisk">*</span>: Mandatory field</div>
             <div id="register-prompt-agreement">
                 <input name="agreement" type="checkbox" value="true">
                 <span class="">By click "Register" button, I agree the <a href="TOS.php" target="_blank">General Terms of Use</a> and the <a href="disclaimer.php" target="_blank">Disclaimer</a>.<span>
             </div>
-            <input type="submit" value="Register" />
-            <input type="reset" value="Reset" />
+            <div class="register-submit-area">
+                <input class="register-input-button" type="submit" value="Register" />
+                <input class="register-input-button" type="reset" value="Reset" />
+            </div>
         </form>
         <div id="info-sysMsg">
             <?php if (array_key_exists('result',$sysMsg)) echo $sysMsg['result'];?>

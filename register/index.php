@@ -67,9 +67,10 @@ switch ($action)
 
 // Output view according to $view
 // If $view is empty, use $action as $view
+if ($view=='') $view=$action;
+loadUI($view);
 header("Content-type: text/html; charset=utf-8");
 require_once(WICHAT_WEB_ROOT.'/include/templates/header.html');
-if ($view=='') $view=$action;
 switch($view)
 {
     case 'register_normal':

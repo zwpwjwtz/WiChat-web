@@ -5,17 +5,24 @@
  * Filename: function_UI.php
  */
 
-function loadUI($param) // Load CSS/Javascript files
+function loadUI($view) // Load CSS/Javascript files
 {
 	global $cssList,$jsList;
-	__add_to_list($cssList,'/css/stylesheet-general.css');
-	switch($param)
+	__add_to_list($cssList,'/css/general.css');
+	switch($view)
 	{
 		case 'index': // Index page
-			__add_to_list($cssList,'/css/stylesheet-index.css');
+			__add_to_list($cssList,'/css/index.css');
 			break;
 		case 'userinfo': // User information page
-			__add_to_list($cssList,'/css/stylesheet-userinfo.css');
+			__add_to_list($cssList,'/css/userinfo.css');
+			break;
+		case 'show_auth': // Authentication page
+			__add_to_list($cssList,'/css/auth.css');
+			break;
+		case 'register_normal': // Registration page
+		case 'register_ok': // Registration result page
+			__add_to_list($cssList,'/css/register.css');
 			break;
 		default:
 		
