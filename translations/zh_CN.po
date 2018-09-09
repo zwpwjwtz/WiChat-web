@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Wichat-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Wichat-web\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-09 09:45+0200\n"
+"PO-Revision-Date: 2018-09-09 09:47+0200\n"
+"Last-Translator: Tianze Wang <zwpwjwtz@126.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#: register/auth_code.php:10
+msgid "Code format is incorrect. Please try again."
+msgstr "邀请码格式不正确。请重试。"
+
+#: register/auth_code.php:19
+msgid "This code does not exist."
+msgstr "邀请码不存在。"
+
+#: register/auth_code.php:28 register/auth_code.php:42
+msgid "Sorry, this code has expired."
+msgstr "抱歉，邀请码已过期。"
+
+#: register/auth_code.php:48
+msgid "Sorry, this code has already been used."
+msgstr "抱歉，邀请码已被使用。"
+
+#: register/auth_code.php:70 register/auth_code.php:84
+msgid "The invitation code is invalid."
+msgstr "邀请码无效。"
+
+#: register/register_normal.php:17
+msgid "ID format is incorrect. Please try again."
+msgstr "账号格式错误，请重试。"
+
+#: register/register_normal.php:22
+msgid "Password format is incorrect. Please try again."
+msgstr "密码格式错误，请重试。"
+
+#: register/register_normal.php:27
+msgid "Password do not match."
+msgstr "两次输入的密码不一致。"
+
+#: register/register_normal.php:32
+msgid "Email address is invalid. Please try again."
+msgstr "邮箱地址格式有误，请重试。"
+
+#: register/register_normal.php:37
+msgid "Phone number is invalid. Please try again."
+msgstr "电话号码格式有误，请重试。"
+
+#: register/register_normal.php:44
+msgid "The length of authentication question must be 1 ~ 30."
+msgstr "密保问题的长度必须在1～30之间。"
+
+#: register/register_normal.php:49
+msgid "The length of answer of the authentication question must be 1 ~ 30."
+msgstr "密保问题的答案的长度必须在1～30之间。"
+
+#: register/register_normal.php:55
+msgid ""
+"Please read the General Terms of Use and Disclaimer, then agree with them by "
+"clicking the checkbox."
+msgstr "请阅读使用条款和免责声明，然后勾选复选框以表示您同意它们。"
+
+#: register/register_normal.php:66 register/register_normal.php:94
+msgid "Server error. Please try again later."
+msgstr "服务器错误，请稍后重试。"
+
+#: register/register_normal.php:86
+msgid "This ID already exists. Please choose another one."
+msgstr "账号已存在，请选择其他的账号。"
+
+#: register/register_normal.php:89
+msgid "Registration failed."
+msgstr "注册失败。"
+
+#: register/register_normal.php:90
+msgid "Please contact website administrator for help."
+msgstr "请联系网站管理员以获取帮助。"

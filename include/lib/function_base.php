@@ -169,5 +169,21 @@ function getClientIP()
 	return $addr;
 }
 
+function initLocale()
+{
+	if (class_exists('Locale'))
+		$locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	else
+		$locale='en_US';
+	
+	putenv('LC_ALL='.$locale);
+	setlocale(LC_ALL, $locale);
+	
+	$domain="Wichat-web";
+	bindtextdomain($domain, WICHAT_WEB_ROOT.'/include/locale');
+	bind_textdomain_codeset($domain ,'UTF-8');
+	textdomain($domain);
+}
+
 require_once(WICHAT_WEB_ROOT.'/include/lib/function_UI.php');
 ?>

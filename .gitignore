@@ -2,4 +2,5 @@
 *.dat
 *.bak
 *.inc
+*.mo
 Build/*

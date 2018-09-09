@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Wichat-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Wichat-web\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-09 09:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: register/auth_code.php:10
+msgid "Code format is incorrect. Please try again."
+msgstr ""
+
+#: register/auth_code.php:19
+msgid "This code does not exist."
+msgstr ""
+
+#: register/auth_code.php:28 register/auth_code.php:42
+msgid "Sorry, this code has expired."
+msgstr ""
+
+#: register/auth_code.php:48
+msgid "Sorry, this code has already been used."
+msgstr ""
+
+#: register/auth_code.php:70 register/auth_code.php:84
+msgid "The invitation code is invalid."
+msgstr ""
+
+#: register/register_normal.php:17
+msgid "ID format is incorrect. Please try again."
+msgstr ""
+
+#: register/register_normal.php:22
+msgid "Password format is incorrect. Please try again."
+msgstr ""
+
+#: register/register_normal.php:27
+msgid "Password do not match."
+msgstr ""
+
+#: register/register_normal.php:32
+msgid "Email address is invalid. Please try again."
+msgstr ""
+
+#: register/register_normal.php:37
+msgid "Phone number is invalid. Please try again."
+msgstr ""
+
+#: register/register_normal.php:44
+msgid "The length of authentication question must be 1 ~ 30."
+msgstr ""
+
+#: register/register_normal.php:49
+msgid "The length of answer of the authentication question must be 1 ~ 30."
+msgstr ""
+
+#: register/register_normal.php:55
+msgid ""
+"Please read the General Terms of Use and Disclaimer, then agree with them by "
+"clicking the checkbox."
+msgstr ""
+
+#: register/register_normal.php:66 register/register_normal.php:94
+msgid "Server error. Please try again later."
+msgstr ""
+
+#: register/register_normal.php:86
+msgid "This ID already exists. Please choose another one."
+msgstr ""
+
+#: register/register_normal.php:89
+msgid "Registration failed."
+msgstr ""
+
+#: register/register_normal.php:90
+msgid "Please contact website administrator for help."
+msgstr ""

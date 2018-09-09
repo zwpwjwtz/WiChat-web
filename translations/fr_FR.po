@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Wichat-web package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Wichat-web\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-09 09:45+0200\n"
+"PO-Revision-Date: 2018-09-09 09:59+0200\n"
+"Last-Translator: Tianze Wang <zwpwjwtz@126.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+
+#: register/auth_code.php:10
+msgid "Code format is incorrect. Please try again."
+msgstr "Le format de code n'est pas correct. Veuillez réessayer."
+
+#: register/auth_code.php:19
+msgid "This code does not exist."
+msgstr "Ce code n'existe pas."
+
+#: register/auth_code.php:28 register/auth_code.php:42
+msgid "Sorry, this code has expired."
+msgstr "Désolé, ce code a expiré."
+
+#: register/auth_code.php:48
+msgid "Sorry, this code has already been used."
+msgstr "Désolé, ce code a déjà été utilisé."
+
+#: register/auth_code.php:70 register/auth_code.php:84
+msgid "The invitation code is invalid."
+msgstr "Ce code d'invitation n'est pas valide."
+
+#: register/register_normal.php:17
+msgid "ID format is incorrect. Please try again."
+msgstr "Le format d'identification n'est pas correct. Veuillez réessayer."
+
+#: register/register_normal.php:22
+msgid "Password format is incorrect. Please try again."
+msgstr "Le format de mot de passe n'est correct. Veuillez réessayer."
+
+#: register/register_normal.php:27
+msgid "Password do not match."
+msgstr "Les deux mots de passe ne correspondent pas.\t"
+
+#: register/register_normal.php:32
+msgid "Email address is invalid. Please try again."
+msgstr "L'adresse e-mail n'est pas valide. Veuillez réessayer."
+
+#: register/register_normal.php:37
+msgid "Phone number is invalid. Please try again."
+msgstr "Le numéro de téléphone n'est pas valide. Veuillez réessayer."
+
+#: register/register_normal.php:44
+msgid "The length of authentication question must be 1 ~ 30."
+msgstr "La longueur de question d'authentification doit être 1 ~ 30."
+
+#: register/register_normal.php:49
+msgid "The length of answer of the authentication question must be 1 ~ 30."
+msgstr ""
+"La longueur de résponse de la question d'authentification doit être 1 ~ 30."
+
+#: register/register_normal.php:55
+msgid ""
+"Please read the General Terms of Use and Disclaimer, then agree with them by "
+"clicking the checkbox."
+msgstr ""
+"Veuillez lire les Conditions Générales d'Utilisation et la Clause de Non-"
+"responsabilité, puis présenter votre accord en cliquant sur la case à cocher."
+
+#: register/register_normal.php:66 register/register_normal.php:94
+msgid "Server error. Please try again later."
+msgstr "Erreur du serveur. Veuillez réessayer ultérieurement."
+
+#: register/register_normal.php:86
+msgid "This ID already exists. Please choose another one."
+msgstr "Cet ID existe déjà. Veuillez en choisir un autre. "
+
+#: register/register_normal.php:89
+msgid "Registration failed."
+msgstr "Échec de l'enregistrement."
+
+#: register/register_normal.php:90
+msgid "Please contact website administrator for help."
+msgstr "Veuillez contacter l'administrateur du site pour plus d'information."

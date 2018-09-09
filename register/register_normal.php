@@ -10,48 +10,49 @@ function register($params)
     $authAnswer=$params['authAnswer'];
     $agreement=$params['agreement'];
     
+    initLocale();
     require_once(WICHAT_WEB_ROOT.'/include/lib/account.php');
     if (!checkID($ID))
     {
-        setSysMsg('result','ID format is incorrect. Please try again.');
+        setSysMsg('result',gettext('ID format is incorrect. Please try again.'));
         return false;
     }
     if (!checkPassword($password))
     {
-        setSysMsg('result','Password format is incorrect. Please try again.');
+        setSysMsg('result',gettext('Password format is incorrect. Please try again.'));
         return false;
     }
     if ($password != $repassword)
     {
-        setSysMsg('result','Password do not match.');
+        setSysMsg('result',gettext('Password do not match.'));
         return false;
     }
     if (!checkEmail($email) || strlen($email) > WEB_REGISTER_EMAIL_MAXLEN)
     {
-        setSysMsg('result','Email address is invalid. Please try again.');
+        setSysMsg('result',gettext('Email address is invalid. Please try again.'));
         return false;
     }
     if (!checkPhone($phone) || strlen($phone) > WEB_REGISTER_PHONE_MAXLEN)
     {
-        setSysMsg('result','Phone number is invalid. Please try again.');
+        setSysMsg('result',gettext('Phone number is invalid. Please try again.'));
         return false;
     }
     if (strlen($authQuestion) > 0 || strlen($authAnswer) > 0)
     {
         if (strlen($authQuestion) <= 0 || strlen($authQuestion) > WEB_REGISTER_AUTHQUESTION_MAXLEN)
         {
-            setSysMsg('result','The length of authentication question must be 1 ~ 30.');
+            setSysMsg('result',gettext('The length of authentication question must be 1 ~ 30.'));
             return false;
         }
         if (strlen($authAnswer) <= 0 || strlen($authAnswer) > WEB_REGISTER_AUTHANSWER_MAXLEN)
         {
-            setSysMsg('result','The length of answer of the authentication question must be 1 ~ 30.');
+            setSysMsg('result',gettext('The length of answer of the authentication question must be 1 ~ 30.'));
             return false;
         }
     }
     if ($agreement != 'true')
     {
-        setSysMsg('result','Please read the General Terms of Use and Disclaimer, then agree with them by clicking the checkbox.');
+        setSysMsg('result',gettext('Please read the General Terms of Use and Disclaimer, then agree with them by clicking the checkbox.'));
         return false;
     }
     
@@ -62,7 +63,7 @@ function register($params)
     require_once(WICHAT_WEB_ROOT.'/scomm/query.php');
     $content=queryAccountServer(ACCOUNT_SCOMM_ACTION_CREATE_ACCOUNT,formatID($ID,ACCOUNT_ID_MAXLEN).$password);
     if (strlen($content) < 2)
-        setSysMsg('result','Server error. Please try again later.');
+        setSysMsg('result',gettext('Server error. Please try again later.'));
     else
     switch (ord($content[0]))
     {
@@ -82,15 +83,15 @@ function register($params)
             return true;
         case RESPONSE_FAILED:
             if (ord($content[1]) == RESPONSE_ACCOUNT_ID_EXISTS)
-                setSysMsg('result','This ID already exists. Please choose another one.');
+                setSysMsg('result',gettext('This ID already exists. Please choose another one.'));
             else
             {
-                setSysMsg('result','Registration failed.');
-                setSysMsg('help','Please contact website administrator for help.');
+                setSysMsg('result',gettext('Registration failed.'));
+                setSysMsg('help',gettext('Please contact website administrator for help.'));
             }
             break;
         default:
-            setSysMsg('result','Server error. Please try again later.');
+            setSysMsg('result',gettext('Server error. Please try again later.'));
     }
     return false;
 }

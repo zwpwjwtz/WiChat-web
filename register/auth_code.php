@@ -1,12 +1,13 @@
 <?php
 function authentication($params)
 {
+    initLocale();
     if (isset($params['code']))
     {
         $code=$params['code'];
         if (strlen($code)!=WEB_INVITATION_CODE_LEN)
         {
-            setSysMsg('result','Code format is incorrect. Please try again.');
+            setSysMsg('result',gettext('Code format is incorrect. Please try again.'));
             return false;
         }
 
@@ -15,7 +16,7 @@ function authentication($params)
         if (!$db->OK) return false;
         if (!$db->existRecord($code))
         {
-            setSysMsg('result','This code does not exist.');
+            setSysMsg('result',gettext('This code does not exist.'));
             return false;
         }
         $record=$db->getRecord($code);
@@ -24,7 +25,7 @@ function authentication($params)
         {
             case WEB_INVITATION_STATE_NONE:
             case WEB_INVITATION_STATE_EXPIRED:
-                setSysMsg('result','Sorry, this code has expired.');
+                setSysMsg('result',gettext('Sorry, this code has expired.'));
                 return false;
             case WEB_INVITATION_STATE_ACTIVE:
                 if (timeDiff(TIME_REG,$record->creationTime)/86400>$record->validity)
@@ -38,13 +39,13 @@ function authentication($params)
                 $db->setRecord($record);
                 if ($record->state==WEB_INVITATION_STATE_EXPIRED)
                 {
-                    setSysMsg('result','Sorry, this code has expired.');
+                    setSysMsg('result',gettext('Sorry, this code has expired.'));
                     return false;
                 }
                 else
                     return true;
             case WEB_INVITATION_STATE_USED:
-                setSysMsg('result','Sorry, this code has already been used.');
+                setSysMsg('result',gettext('Sorry, this code has already been used.'));
                 return false;
             default:
                 return false;
@@ -60,12 +61,13 @@ function auth_destroy($params)
     $code=$params['code'];
     if (isset($params['id'])) $ID=$params['id']; else $ID='';
 
+    initLocale();
     require_once(WICHAT_WEB_ROOT.'/include/lib/db.php');        
     $db=new inviteDB(INVITATION_LIST);
     if (!$db->OK) return false;
     if (!$db->existRecord($code))
     {
-        setSysMsg('result','The invitation code is invalid.');
+        setSysMsg('result',gettext('The invitation code is invalid.'));
         return false;
     }
     $record=$db->getRecord($code);
@@ -79,7 +81,7 @@ function auth_destroy($params)
     }
     else if ($record->state!=WEB_INVITATION_STATE_USED || $record->regID!='')
     {
-        setSysMsg('result','The invitation code is invalid.');
+        setSysMsg('result',gettext('The invitation code is invalid.'));
         return false;
     }
     else
